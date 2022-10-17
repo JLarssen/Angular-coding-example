@@ -1,0 +1,15 @@
+<div *ngIf="dishInfo" class="container">
+  <h2>{{ dishInfo.name }}</h2>
+
+  <div class="row align-items-start">
+    <div class="col">
+      <img src="{{ dishInfo.img }}">
+    </div>
+    <div class="col">
+      <p>€ {{ dishInfo.price }}</p>
+      <p>{{ dishInfo.description }}</p>
+      <p>{{ dishInfo.detail }}</p>
+      <button (click)="addToCart()" id="btn_order" class="btn btn-success mx-2">Order</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>

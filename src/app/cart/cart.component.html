@@ -1,0 +1,55 @@
+<table width="100%">
+    <tr>
+        <td width="70%">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Cart - {{ counter }} item(s)</h2>
+                </div>
+            </div>
+            <div class="row" *ngFor="let item of items">
+                <div class="col"><img src="{{ item.img }}" class="img" alt="" /></div>
+                <div class="col gy-4">
+                    <h6>{{ item.name }}</h6>
+                    <p>{{ item.detail }}</p>
+                </div>
+                <div class="col gy-4">
+                    <p>Price: €{{item.str_price}}</p>
+                </div>
+            </div>
+        </td>
+        <td class="td--title">
+            <h2>Summary</h2>
+            <div>
+                <ng-template [ngIf]=" counter > 0">
+                    <p></p> 
+                    <p class="p--var">Orders: € {{ str_sum}}</p>
+                </ng-template>
+                <ng-template [ngIf]="counter > 0">
+                    <p>Service: € {{ str_servicefee}}</p>
+                </ng-template>
+                <p class="p--var" *ngIf="str_discount">Discount: €{{ str_discount}}</p>
+                <div class="p--var" *ngIf="counter > 0"><hr>
+                    <p>Total amount: € {{ str_tot }}</p><hr><hr>
+                    <!-- <p><a class="btn btn-primary" role="button" (click)="clearCart()" routerLink="" aria-current="page">Clear cart</a></p> -->
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div class="order_box">
+    <h1>Order Form</h1>
+    <p>Please fill in your name and address for the delivery:</p>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="form_name">Name</span>
+        <input type="text" class="form-control" placeholder="full name" aria-describedby="form_name">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="form_adr">Address</span>
+        <input type="text" class="form-control" placeholder="street" aria-describedby="form_adr">
+        <input type="text" class="form-control" placeholder="postal code and City" aria-label="Postal code City:">
+    </div>
+    <p><button class="btn btn-primary" type="button">Purchase</button></p>
+</div>

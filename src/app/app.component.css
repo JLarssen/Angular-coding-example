@@ -1,0 +1,16 @@
+h1 {
+
+    font-size: 2.4em;
+    font-family: "Pacifico", cursive;
+    font-style: italic;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  
+p {
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+  }

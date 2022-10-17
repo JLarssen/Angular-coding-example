@@ -1,0 +1,26 @@
+<h1 id="dishes">Our specialties</h1>
+<div class="container gap-4">
+    <div class="row row-cols-md-2 row-cols-lg-3 row-cols-1 gap-2" id="dish-grid">
+
+        <div class="row" *ngFor="let dish of dishes; index as i">
+            <div class="card">
+                <img src="{{ dish.img }}" class="card-img-top dish--img" alt="img_{{i}}" routerLink="/dishes/{{ i }}" />
+                <div class="card-body">
+                    <h3 id="title" class="card-title">{{ dish.name }}</h3>
+                    <p class="card-text"> {{ dish.description }}</p>
+                    <hr>
+                    <p class="card-text"><b>€ </b> {{ dish.str_price }}</p>
+                    <hr>
+                    <ng-template [ngIf]="dish.available" [ngIfElse]="none">
+                        <p><a class="btn btn-primary" role="button" routerLink="dishInfo/{{ i }}" id="btn_detail">See details below
+                          </a>
+                        <button (click)="addToCart(i)" type="button" id="btn_order" class="btn btn-success mx-1">Order</button>
+                    </ng-template>
+                    <ng-template #none>
+                        <p>Out of stock, but coming back soon!</p>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>

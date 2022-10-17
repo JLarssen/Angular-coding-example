@@ -1,0 +1,21 @@
+h1 {
+    padding: 1em;
+    font-size: 2.4em;
+    font-family: "Pacifico", cursive;
+    font-style: italic;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  
+p {
+    color: black;
+    font-size: 0.8em;
+  }
+
+.dish--img {
+  display: inline-block;
+  max-width: 260px;
+
+}
