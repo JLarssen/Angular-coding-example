@@ -21,18 +21,21 @@
             <h2>Summary</h2>
             <div>
                 <ng-template [ngIf]=" counter > 0">
-                    <p></p> 
+                    <p></p>
                     <p class="p--var">Orders: € {{ str_sum}}</p>
                 </ng-template>
                 <ng-template [ngIf]="counter > 0">
-                    <p>Service: € {{ str_servicefee}}</p>
+                    <p class="p--var">Service: € {{ str_servicefee}}</p>
+                    <p>Total amount: € {{ str_tot }}</p>
                 </ng-template>
-                <p class="p--var" *ngIf="str_discount">Discount: €{{ str_discount}}</p>
-                <div class="p--var" *ngIf="counter > 0"><hr>
-                    <p>Total amount: € {{ str_tot }}</p><hr><hr>
-                    <!-- <p><a class="btn btn-primary" role="button" (click)="clearCart()" routerLink="" aria-current="page">Clear cart</a></p> -->
-                    
-                </div>
+                <ng-template [ngIf]="str_discount">
+                    <p class="p--var" *ngIf="str_discount">Discount: €{{ str_discount}}</p>
+                    <hr>
+                    <p>New total amount: € {{ str_new_tot }}</p>
+                </ng-template>
+                <hr *ngIf="counter > 0">
+                <hr *ngIf="counter > 0">
+                <!-- <p><a class="btn btn-primary" role="button" (click)="clearCart()" routerLink="" aria-current="page">Clear cart</a></p> -->
             </div>
         </td>
     </tr>

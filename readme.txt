@@ -3,7 +3,7 @@ Hello, please take notice of my 2 remarks for CR3:
 	* it was not possible to use the borrowed laptop and to push the whole Ang-Project. Because
 	VSC did not accept my remote Repo, please see .pic with error message (vsc changes the path of the Repo and makes a - instead of a :
 	Again I sat too many hours and tried to push CR3. So I did upload the src-folder and deploy it 
-	on the server.
+	on the server. But the /asset/img/ is not found - I tried 100 variants like /assets/img/     ../../assets/img  and so on.
 	
 	* I do feel so bad for the lobsters and other creatures in the oceans 
 	who get boiled when the still are alive and eaten by humans, thereby destroying
@@ -15,5 +15,5 @@ Hello, please take notice of my 2 remarks for CR3:
 	about the component cycle, but I wasn't capable to make it work. Just if you have time, pleas just give 
 	some hints how one would do it right (but not so important)
 	
-	* tried to make a new page for 'details' with redirect and giving the route but Angular did not 
-	accept the routing
+	* I tried to make a new page for 'details' with redirect and giving the route but Angular did not accept the routing.
+Please can you tell me how to route coorectly? I will probabl need it this week (if I get the task that I asked for in our meeting). Thank you so much!

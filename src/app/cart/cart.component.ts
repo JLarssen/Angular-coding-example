@@ -14,6 +14,7 @@ export class CartComponent implements OnInit, OnDestroy {
   str_sum: string = '';
   str_servicefee: string | undefined;
   str_tot: string = '';
+  str_new_tot: string = '';
 
   constructor(private cs: CartService) { }
 
@@ -23,12 +24,11 @@ export class CartComponent implements OnInit, OnDestroy {
     this.str_sum = this.stringify(this.cs.sum);
     console.log("discount  ", this.cs.discount, "  summe ", this.cs.sum);
     this.str_servicefee = this.stringify(this.cs.fee);
+    this.str_tot = this.stringify(this.cs.total);
     if (this.cs.discount) {
       this.str_discount = this.stringify(this.cs.discount);
-      this.str_tot = this.stringify(this.cs.total - this.cs.discount);
-    } else {
-      this.str_tot = this.stringify(this.cs.total);
-    }
+      this.str_new_tot = this.stringify(this.cs.new_total);
+    } 
   }
 
   stringify(num: number) {

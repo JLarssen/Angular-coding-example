@@ -10,7 +10,8 @@ export class CartService {
   sum: number = 0;
   fee: number = 0;
   total: number = 0;
-  discount: number |undefined  
+  discount: number | undefined  
+  new_total: number = -1;
 
   constructor() {
 
@@ -23,6 +24,7 @@ export class CartService {
     this.getServicefee(this.sum);
     this.getTotal();
     this.getDiscount(this.total);
+    this.getNewTotal();
   }
 
   getItems() {
@@ -46,7 +48,15 @@ export class CartService {
 
   getTotal () {
     return (this.total = this.sum + this.fee);
-}
+  }
+
+  getNewTotal () {
+    if (this.discount) {
+      this.new_total = this.total - this.discount
+    }
+    return (this.new_total);
+  }
+
 
   getDiscount(tot: number) {
       if(tot >= 40) {
